@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: stretch;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper, .main {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    width: 80%;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.acdn__list, .acdn__inner {
+    list-style: none;
+}
+.acdn__inner {
+	max-height: 0px;
+	overflow: hidden;
+}
+.acdn__item {
+    margin-bottom: .2rem;
+}
+.acdn__toggler {
+    display: flex;
+    justify-content: space-between;
+	background: #e7e7e7;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: #696666;
+    font-weight: bold;
+}
+.acdn__item:nth-child(odd) .acdn__toggler {
+    color: #e7e7e7;
+    background: #696666;
+}
+.acdn__item.active> .acdn__toggler  {
+    background: #ff8663;
+    color: white;
+}
+
+.acdn__item {
+    background: #e7e7e7;
+    border-radius: 1.5rem;
+}
+.acdn__inner-item {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.acdn__inner-item:first-child {
+    padding-top: 1rem;
+}
+
+.acdn__inner-link {
+    text-decoration: none;
+    color: #696666;
+}
+.acdn__toggler-triangle{
+    margin-left: 1rem;
+    color: #ff8663;
+}
+.acdn__item.active> .acdn__toggler > .acdn__toggler-triangle {
+    color: white;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.delimiter {
+    padding: 5rem;
+}
