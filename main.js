@@ -35,8 +35,8 @@ window.addEventListener('load', ()=>{
             let item = el.parentNode,
             items = item.parentNode.children,
             content = item.querySelector('.acdn__inner'),
-            duration = 100,
-            frequency = 100,
+            duration = 200,
+            frequency = 50,
             activeEl = Object
                 .values(items)
                 .find(el=>el.classList.contains('active')?el:null);
@@ -45,12 +45,10 @@ window.addEventListener('load', ()=>{
                 if (!Object.is(item, activeEl)) {
                     item.classList.add('active');
                     el.querySelector('.acdn__toggler-triangle').innerHTML = "&#9650;";
+                    animate('hide', activeEl.querySelector('.acdn__inner'), duration, frequency);
                     animate('show', content, duration, frequency);
-                    if (!Object.is(activeEl, undefined)){
-                        animate('hide', activeEl.querySelector('.acdn__inner'), duration, frequency);
-                        activeEl.classList.remove('active')
-                        activeEl.querySelector('.acdn__toggler-triangle').innerHTML = "&#9660;";
-                    }
+                    activeEl.classList.remove('active')
+                    activeEl.querySelector('.acdn__toggler-triangle').innerHTML = "&#9660;";
                 }
             }
         })
