@@ -39,8 +39,8 @@ window.addEventListener('load', ()=>{
             let item = el.parentNode,
             items = item.parentNode.children,
             content = item.querySelector('.acdn__inner'),
-            duration = 300,
-            frequency = 10,
+            duration = 400,
+            frequency = 50,
             activeEl = Object
                 .values(items)
                 .find(el=>el.classList.contains('active')?el:null);
