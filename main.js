@@ -2,10 +2,10 @@ window.addEventListener('load', ()=>{
     let completeAnimate = true;
 
     function animate(type, el, duration, frequency = 50){
-        console.time('run_time');
+        // console.time('run_time');
         completeAnimate = false;
         let curHeight = type === "show"?0:type==="hide"?el.scrollHeight:null;
-        console.log('f:', curHeight);
+        // console.log('f:', curHeight);
         if (curHeight != null) {
             let animateID = setInterval(()=>{
                 let pixDelta = el.scrollHeight/Math.floor(duration/(1000/frequency));
@@ -14,7 +14,7 @@ window.addEventListener('load', ()=>{
                     curHeight += pixDelta;
                 } else {
                     curHeight -= pixDelta;
-                    console.log(curHeight, pixDelta);
+                    // console.log(curHeight, pixDelta);
                 };
 
                 el.style.maxHeight = curHeight + "px";
@@ -23,7 +23,7 @@ window.addEventListener('load', ()=>{
                     if (type==="hide") el.style.maxHeight = 0 + "px";
                     clearInterval(animateID);
                     completeAnimate = true;
-                    console.timeEnd('run_time');
+                    // console.timeEnd('run_time');
                 }
             }, 1000/frequency)
         } 
